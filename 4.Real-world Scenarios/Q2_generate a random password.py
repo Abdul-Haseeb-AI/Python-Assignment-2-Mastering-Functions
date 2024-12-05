@@ -1,12 +1,13 @@
 import random
 import string
-def gen_pwd(length):
-    upr_case = string.ascii_uppercase
-    lwr_case = string.ascii_uppercase
-    dig_case = string.ascii_uppercase
-    sym_case = string.ascii_uppercase
-
-
-
-len = input("Enter length of password : ")
-print("Password ->",gen_pwd(len))
+def gen_password(len):
+    alpha = string.ascii_letters
+    dig = string.digits
+    sym = string.punctuation
+    password = ""
+    for i in range(len):
+        list = [random.choice(alpha),random.choice(dig),random.choice(sym)]
+        password += random.choice(list)
+    return password
+len = int(input("Enter Length :"))
+print(gen_password(len))
